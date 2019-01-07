@@ -3,13 +3,20 @@ import './Netlog.css';
 import Appheader from './components/Appheader';
 import Applogin from './components/Applogin';
 
+
 class Netlog extends Component{
-    state = {}
+    state = {  }
+
+    constructor(props){
+        super(props);
+        sessionStorage.clear();
+    }
+
     render(){
         return ( 
             <div>
-            <Appheader />
-            <Applogin />
+                <Appheader />
+                <Applogin />
             </div>
         );
     }
