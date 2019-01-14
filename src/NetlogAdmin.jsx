@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Adminheader from './components/Adminheader';
+import Welcomeuser from  './components/Welcomeuser';
+import Manageusers from './components/Manageusers';
+import { Switch, Route } from 'react-router-dom';
 
 class NetlogAdmin extends Component {
     state = { }
@@ -16,8 +19,13 @@ class NetlogAdmin extends Component {
         return (
             <div>
                 <Adminheader />
-                Admin
+                <div className="container">
+                <Switch>
+                    <Route exact path="/admin" component={Welcomeuser} />
+                    <Route path="/admin" component={Manageusers} />
+                </Switch>
             </div>
+        </div>
         );
     }
 }

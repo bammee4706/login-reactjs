@@ -31,11 +31,12 @@ class Applogin extends Component {
             $('.alert').hide();
             let result = await axios.post
             ('http://localhost/netlogapi/users.php',{
-                ApiKey: 'NetLogApi',
-                fn: 'login',
+                Apikey: 'NetLogApi',
+                fn: 'Login',
                 users_name: username,
                 users_password: password
             });
+            console.log(result.data)
             if(result.data != false){
                 let user = result.data
                 delete user.users_password;
